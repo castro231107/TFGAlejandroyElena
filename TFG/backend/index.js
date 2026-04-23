@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+require("dotenv").config();
+
 // Conexión
 
-mongoose.connect("mongodb+srv://elenab:holaquetal@cluster0.xlwvdhu.mongodb.net/?appName=Cluster0")
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("MongoDB conectado"))
     .catch(err => console.log(err));
 
