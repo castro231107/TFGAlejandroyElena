@@ -69,7 +69,7 @@ html,
 
 .pregunta-home {
     font-size: 2.2rem;
-    color: #d71820;
+    color: #1750cc;
     /* Tu color de marca */
     font-weight: 800;
     margin-bottom: 20px;
@@ -156,7 +156,7 @@ html,
 }
 
 .botones-home button {
-    background-color: #d71820;
+    background-color: #1750cc;
     /* Color Nebrimatch */
     color: white;
     font-size: 1.1rem;
@@ -165,15 +165,15 @@ html,
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(215, 24, 32, 0.3);
+    box-shadow: 0 8px 20px rgba(18, 10, 140, 0.4);
     /* Sombra roja brillante */
     transition: all 0.3s ease;
 }
 
 .botones-home button:hover {
-    background-color: #b51219;
+    background-color: #1750cc;
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(215, 24, 32, 0.4);
+    box-shadow: 0 12px 25px rgba(18, 10, 140, 0.4);
 }
 
 /* =========================================

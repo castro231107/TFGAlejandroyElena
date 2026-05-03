@@ -23,7 +23,7 @@ function Inicio() {
             </div>
 
             <div className="Preguntas-home">
-                <p className='pregunta-home'>¿QUÉ ES NEBRIMATCH?</p>
+                <p className='pregunta-home'>CONOCE SAFEPOCKET</p>
             </div>
 
             <div className='DistribucionTarjetas'>
@@ -47,13 +47,16 @@ function Inicio() {
                 <img className='imagen2-home' src={imagen1} alt="Estudiantes de NebriMatch" />
 
                 <div className='unete-home'>
-                    <h3>ÚNETE A LA FAMILIA NEBRIMATCH</h3>
+                    <h3>ÚNETE A LA FAMILIA SAFEPOCKET</h3>
                     <div className='botones-home'>
 
                         <button onClick={irRegistro}>Registrarse o iniciar</button>
                     </div>
                 </div>
             </div>
+
+
+            {/* Yo preguntas home lo quitaba porque es basicmente como las 3 de arriba */}
 
             <div className="Preguntas-home">
                 <p className='pregunta-home'>¿Cómo funciona?</p>
@@ -83,28 +86,28 @@ function Inicio() {
 
                 <div className='distribuccionFAQ-home'>
                     <FAQItem
-                        question="¿Es gratis?"
-                        answer="Sí. NebriMatch es completamente gratis. Puedes crear tu perfil, hacer match con otras personas y estudiar juntos sin ningún coste."
+                        question="¿Cómo puedo crear una cuenta?"
+                        answer="Puedes registrarte desde la app introduciendo tus datos personales básicos. Una vez completado el registro, podrás acceder a tu cuenta y empezar a gestionar tus finanzas."
                     />
 
                     <FAQItem
-                        question="¿Necesito experiencia previa?"
-                        answer="No. Puedes usar NebriMatch tanto si estás empezando desde cero como si ya tienes conocimientos y quieres ayudar a otros. La plataforma está pensada para todos los niveles."
+                        question="¿Cómo puedo realizar una transferencia?"
+                        answer="Para hacer una transferencia, accede a la sección de pagos, introduce el número de cuenta del destinatario, el importe y confirma la operación."
                     />
 
                     <FAQItem
-                        question="¿Cómo funciona?"
-                        answer="Primero creas tu perfil indicando qué estudias, qué sabes y qué quieres aprender. A partir de ahí, NebriMatch te conecta con personas compatibles para que podáis estudiar o enseñar juntos."
+                        question="¿Es segura mi información bancaria?"
+                        answer="Sí, utilizamos medidas de seguridad como encriptación de datos y autenticación de usuarios para proteger tu información personal y financiera."
                     />
 
                     <FAQItem
-                        question="¿Cómo hago match?"
-                        answer="El sistema de match se basa en la información de tu perfil y tus intereses. Te proponemos a personas que tienen objetivos similares a los tuyos, y vas decidiendo con quien quieres trabajar o de quien quieres aprender"
+                        question="¿Cómo puedo consultar mi saldo y movimientos?"
+                        answer="Puedes ver tu saldo actualizado y el historial de movimientos desde el panel principal de tu cuenta en cualquier momento."
                     />
 
                     <FAQItem
-                        question="¿Hay sesiones grupales?"
-                        answer="Sí. Puedes unirte a sesiones grupales para estudiar con varias personas al mismo tiempo y compartir conocimientos."
+                        question="¿Qué hago si detecto una operación sospechosa?"
+                        answer="Si ves una transacción que no reconoces, contacta inmediatamente con soporte desde la app para que podamos revisar y asegurar tu cuenta."
                     />
                 </div>
             </div>

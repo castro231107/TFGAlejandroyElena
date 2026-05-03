@@ -28,7 +28,7 @@
     /* Se levanta un poco */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
     /* Sombra más fuerte al levantarse */
-    border-color: rgba(215, 24, 32, 0.2);
+    border-color: rgba(18, 10, 140, 0.4);
     /* Borde sutil rojo */
 }
 
@@ -45,7 +45,7 @@
 /* El icono + o - */
 .faq-question span:last-child {
     font-size: 1.5rem;
-    color: #d71820;
+    color: #1750cc;
     /* Color rojo de tu marca */
     font-weight: bold;
     transition: transform 0.3s ease;
