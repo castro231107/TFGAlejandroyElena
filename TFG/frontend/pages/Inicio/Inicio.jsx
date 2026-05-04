@@ -16,6 +16,16 @@ function Inicio() {
 
     return (
         <div className="body-home">
+            <div className="head">
+                <div className="col1-head">
+                    <h2 className="titulo-head">SafePocket</h2>
+                </div>
+
+                <div className="col2-head">
+                    <button className="boton-head" onClick={irRegistro}>¡ÚNETE AHORA!</button>
+                </div>
+            </div>
+
             <div className="info-home">
                 <div className="eslogan-home">
                     <h1>Tu dinero, bajo control.</h1>
@@ -64,18 +74,18 @@ function Inicio() {
 
             <div className='DistribucionTarjetas'>
                 <TarjetaHome
-                    title="Crea tu perfil."
-                    text="Di qué estudias, qué sabes y qué buscas."
+                    title="Registra tu día a día."
+                    text="Apunta lo que gastas y lo que ingresas sin complicaciones."
                 />
 
                 <TarjetaHome
-                    title="Haz match"
-                    text="Te conectamos con personas afines."
+                    title="Organiza tus metas"
+                    text="Crea presupuestos, establece objetivos y sigue tu progreso de forma clara y sencilla."
                 />
 
                 <TarjetaHome
-                    title="Aprended juntos"
-                    text="Chat, videollamada o sesiones de estudio."
+                    title="Aprende y crece"
+                    text="Recibe consejos, trucos y novedades para mejorar tus finanzas personales."
                 />
             </div>
 
@@ -110,6 +120,9 @@ function Inicio() {
                         answer="Si ves una transacción que no reconoces, contacta inmediatamente con soporte desde la app para que podamos revisar y asegurar tu cuenta."
                     />
                 </div>
+            </div>
+            <div className='footer-home'>
+                <p>© Copyright SafePocket 2026 | Todos los derechos reservados</p>
             </div>
         </div>
     );
