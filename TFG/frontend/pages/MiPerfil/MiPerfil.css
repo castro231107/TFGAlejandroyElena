@@ -1,0 +1,9 @@
+.page-container {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-container h1 {
+    color: #1750cc;
+}

@@ -1,0 +1,55 @@
+.transferencia-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 600;
+}
+
+.form-input {
+    padding: 0.85rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #2b5876;
+}
+
+.input-importe {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2b5876;
+}
+
+.btn-enviar-transferencia {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(78, 67, 118, 0.3);
+}
+
+.btn-enviar-transferencia:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(78, 67, 118, 0.4);
+}
