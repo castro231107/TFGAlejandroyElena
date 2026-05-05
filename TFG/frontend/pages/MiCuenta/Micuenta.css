@@ -1,0 +1,64 @@
+.mi-cuenta-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.saldo-card {
+    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+}
+
+.saldo-card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.saldo-cantidad {
+    margin: 10px 0 0;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.accion-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #f0f2f5;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.accion-btn:hover {
+    background-color: #e4e6eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accion-btn.btn-primario {
+    background-color: #4e4376;
+    color: white;
+}
+
+.accion-btn.btn-primario:hover {
+    background-color: #645595;
+}

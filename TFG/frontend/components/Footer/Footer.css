@@ -1,0 +1,14 @@
+.app-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: gray;
+    color: white;
+    border-top: none;
+    margin-top: auto; /* Empuja el footer al final de la página si se usa flexbox */
+}
+
+.app-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

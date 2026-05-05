@@ -1,0 +1,92 @@
+.promedio-diario-card {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eee;
+}
+
+.promedio-diario-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.promedio-cantidad {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.promedio-desc {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.seccion-titulo {
+    font-size: 1.15rem;
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.lista-categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.categoria-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.categoria-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.categoria-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.categoria-info span {
+    font-weight: 600;
+    color: #444;
+}
+
+.categoria-icono {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.categoria-icono.comida { background-color: #ffeaa7; }
+.categoria-icono.transporte { background-color: #81ecec; }
+.categoria-icono.ocio { background-color: #fab1a0; }
+.categoria-icono.hogar { background-color: #a29bfe; }
+
+.categoria-gasto {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+}
