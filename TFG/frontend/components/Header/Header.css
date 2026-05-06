@@ -1,4 +1,4 @@
-.app-header {
+.cabecera-app {
     display: flex;
     align-items: center;
     padding: 1rem 2rem;
@@ -8,16 +8,16 @@
 }
 
 /* Estos dos elementos permiten que la navegación quede perfectamente centrada */
-.app-header::after {
+.cabecera-app::after {
     content: '';
     flex: 1;
 }
 
-.header-logo {
+.logo-cabecera {
     flex: 1;
 }
 
-.header-logo a {
+.logo-cabecera a {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
@@ -25,13 +25,13 @@
     letter-spacing: 0.5px;
 }
 
-.header-nav {
+.navegacion-cabecera {
     display: flex;
     justify-content: center;
     gap: 3.5rem; /* Aumentamos la separación entre los enlaces */
 }
 
-.header-nav a {
+.navegacion-cabecera a {
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -39,7 +39,7 @@
     transition: all 0.2s;
 }
 
-.header-nav a:hover {
+.navegacion-cabecera a:hover {
     opacity: 0.8;
     transform: translateY(-1px);
 }

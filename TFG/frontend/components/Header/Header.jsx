@@ -4,11 +4,11 @@ import './Header.css';
 
 function Header() {
     return (
-        <header className="app-header">
-            <div className="header-logo">
+        <header className="cabecera-app">
+            <div className="logo-cabecera">
                 <Link to="/micuenta">SafePocket</Link>
             </div>
-            <nav className="header-nav">
+            <nav className="navegacion-cabecera">
                 <Link to="/micuenta">Mi Cuenta</Link>
                 <Link to="/tarjeta">Tarjeta</Link>
                 <Link to="/noticias">Noticias</Link>

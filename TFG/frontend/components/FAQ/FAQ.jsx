@@ -1,17 +1,17 @@
 import { useState } from "react";
 import "./FAQ.css"
 
-const FAQItem = ({ question, answer }) => {
+const FAQItem = ({ pregunta, respuesta }) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="faq-item" onClick={() => setOpen(!open)}>
-            <div className="faq-question">
-                <span>{question}</span>
+        <div className="elemento-faq" onClick={() => setOpen(!open)}>
+            <div className="pregunta-faq">
+                <span>{pregunta}</span>
                 <span>{open ? "−" : "+"}</span>
             </div>
 
-            {open && <p className="faq-answer">{answer}</p>}
+            {open && <p className="respuesta-faq">{respuesta}</p>}
         </div>
     );
 };

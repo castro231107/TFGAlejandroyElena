@@ -1,5 +1,5 @@
 /* Contenedor padre general de FAQs */
-.faq-home {
+.contenedor-faq {
     width: 100%;
     max-width: 800px;
     /* Un poco más ancho para que respire */
@@ -8,7 +8,7 @@
 }
 
 /* Cada tarjeta individual de pregunta */
-.faq-item {
+.elemento-faq {
     width: 100%;
     background: white;
     padding: 1.2rem 2rem;
@@ -23,7 +23,7 @@
 }
 
 /* Efecto al pasar el ratón */
-.faq-item:hover {
+.elemento-faq:hover {
     transform: translateY(-4px);
     /* Se levanta un poco */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
@@ -33,7 +33,7 @@
 }
 
 /* Zona de la pregunta y el icono */
-.faq-question {
+.pregunta-faq {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,7 @@
 }
 
 /* El icono + o - */
-.faq-question span:last-child {
+.pregunta-faq span:last-child {
     font-size: 1.5rem;
     color: #1750cc;
     /* Color rojo de tu marca */
@@ -52,7 +52,7 @@
 }
 
 /* Zona de la respuesta */
-.faq-answer {
+.respuesta-faq {
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid #eee;
