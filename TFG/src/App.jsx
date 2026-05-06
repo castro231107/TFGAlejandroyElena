@@ -7,6 +7,7 @@ import Noticias from '../frontend/pages/Noticias/Noticias'
 import MiPerfil from '../frontend/pages/MiPerfil/MiPerfil'
 import Header from '../frontend/components/Header/Header'
 import Footer from '../frontend/components/Footer/Footer'
+import Registro from "../frontend/pages/Registro/Registro";
 
 function AppContent() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function AppContent() {
           <Route path="/tarjeta" element={<Tarjeta />} />
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/miperfil" element={<MiPerfil />} />
+          <Route path="/registro" element={<Registro />} />
         </Routes>
       </div>
       {!isInicio && <Footer />}

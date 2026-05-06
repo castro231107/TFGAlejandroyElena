@@ -11,7 +11,7 @@ function Inicio() {
 
 
     const irRegistro = () => {
-        navigate('/login');
+        navigate('/registro');
     };
 
     return (
