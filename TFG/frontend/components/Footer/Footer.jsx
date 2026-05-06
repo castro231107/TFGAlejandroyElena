@@ -3,7 +3,7 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <footer className="app-footer">
+        <footer className="pie-app">
             <p>&copy; Copyright SafePocket {new Date().getFullYear()} | Todos los derechos reservados.</p>
         </footer>
     );

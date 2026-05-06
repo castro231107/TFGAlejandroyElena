@@ -1,4 +1,4 @@
-.app-footer {
+.pie-app {
     text-align: center;
     padding: 1.5rem;
     background-color: gray;
@@ -7,7 +7,7 @@
     margin-top: auto; /* Empuja el footer al final de la página si se usa flexbox */
 }
 
-.app-footer p {
+.pie-app p {
     margin: 0;
     font-size: 0.9rem;
     font-weight: bold;
