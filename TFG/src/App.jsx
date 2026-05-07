@@ -8,14 +8,16 @@ import MiPerfil from '../frontend/pages/MiPerfil/MiPerfil'
 import Header from '../frontend/components/Header/Header'
 import Footer from '../frontend/components/Footer/Footer'
 import Registro from "../frontend/pages/Registro/Registro";
+import IniciarSesion from "../frontend/pages/IniciarSesion/IniciarSesion";
 
 function AppContent() {
   const location = useLocation();
-  const isInicio = location.pathname === '/';
+  const hideHeader = location.pathname === '/' || location.pathname === '/registro' || location.pathname === '/iniciar-sesion';
+  const showFooter = location.pathname !== '/';
 
   return (
     <div className="app-wrapper">
-      {!isInicio && <Header />}
+      {!hideHeader && <Header />}
       {/*las llaves es para meter contenido de JS*/}
       {/*&& significa que se muestre si es verdadero y no se muestre si es falso*/}
 
@@ -27,9 +29,10 @@ function AppContent() {
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/miperfil" element={<MiPerfil />} />
           <Route path="/registro" element={<Registro />} />
+          <Route path="/iniciar-sesion" element={<IniciarSesion />} />
         </Routes>
       </div>
-      {!isInicio && <Footer />}
+      {showFooter && <Footer />}
     </div>
   );
 }

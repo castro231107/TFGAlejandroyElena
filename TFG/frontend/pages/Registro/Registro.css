@@ -1,0 +1,84 @@
+.form-page {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at top left, rgba(79, 129, 255, 0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(63, 120, 242, 0.12), transparent 32%),
+    #f5f7fb;
+}
+
+.form-card {
+  width: min(100%, 440px);
+  padding: 2.2rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 22px 60px rgba(30, 70, 110, 0.12);
+  border: 1px solid rgba(15, 47, 93, 0.06);
+}
+
+.form-card h1 {
+  margin: 0 0 1.4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f305a;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid #d8e3ef;
+  border-radius: 16px;
+  font-size: 1rem;
+  color: #152a44;
+  background: #f8fbff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4d7cff;
+  box-shadow: 0 0 0 4px rgba(79, 129, 255, 0.12);
+}
+
+button {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: none;
+  border-radius: 16px;
+  background: #3869ff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background: #2f56e2;
+  transform: translateY(-1px);
+}
+
+.link-text {
+  margin: 1.25rem 0 0;
+  text-align: center;
+  font-size: 0.96rem;
+  color: #4d5c79;
+}
+
+.link-text a {
+  color: #3869ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link-text a:hover {
+  text-decoration: underline;
+}

@@ -1,14 +1,17 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Registro.css";
 
 const Registro = () => {
+
+  // 👇 AQUÍ VA EL ESTADO DEL FORMULARIO
   const [form, setForm] = useState({
     nombre: "",
     apellidos: "",
     correo: "",
-    telefono: ""
+    telefono: "",
+    password: ""
   });
-
-  const [mensaje, setMensaje] = useState("");
 
   const handleChange = (e) => {
     setForm({
@@ -20,71 +23,40 @@ const Registro = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await fetch("http://localhost:3000/api/usuarios", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      });
+    const res = await fetch("http://localhost:3000/api/usuarios", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(form)
+    });
 
-      const data = await res.json();
-      console.log(data);
-
-      setMensaje("Usuario creado correctamente ✅");
-
-      // limpiar formulario
-      setForm({
-        nombre: "",
-        apellidos: "",
-        correo: "",
-        telefono: ""
-      });
-
-    } catch (error) {
-      console.error(error);
-      setMensaje("Error al crear usuario ❌");
-    }
+    const data = await res.json();
+    console.log(data);
   };
 
   return (
-    <div>
-      <h1>Registro</h1>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          name="nombre"
-          placeholder="Nombre"
-          value={form.nombre}
-          onChange={handleChange}
-        />
-
-        <input
-          name="apellidos"
-          placeholder="Apellidos"
-          value={form.apellidos}
-          onChange={handleChange}
-        />
-
-        <input
-          name="correo"
-          placeholder="Correo"
-          value={form.correo}
-          onChange={handleChange}
-        />
-
-        <input
-          name="telefono"
-          placeholder="Teléfono"
-          value={form.telefono}
-          onChange={handleChange}
-        />
-
-        <button type="submit">Crear cuenta</button>
-      </form>
-
-      {mensaje && <p>{mensaje}</p>}
+    <div className="form-page">
+      <div className="form-card">
+        <h1>Crear cuenta</h1>
+        <form onSubmit={handleSubmit}>
+          <input name="nombre" placeholder="Nombre" onChange={handleChange} value={form.nombre} />
+          <input name="apellidos" placeholder="Apellidos" onChange={handleChange} value={form.apellidos} />
+          <input name="correo" placeholder="Correo" onChange={handleChange} value={form.correo} />
+          <input name="telefono" placeholder="Teléfono" onChange={handleChange} value={form.telefono} />
+          <input
+            name="password"
+            placeholder="Contraseña"
+            type="password"
+            onChange={handleChange}
+            value={form.password}
+          />
+          <button type="submit">Crear cuenta</button>
+        </form>
+        <p className="link-text">
+          ¿Ya tienes cuenta? <Link to="/iniciar-sesion">Inicia sesión</Link>
+        </p>
+      </div>
     </div>
   );
 };
