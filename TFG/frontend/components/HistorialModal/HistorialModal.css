@@ -33,12 +33,14 @@
 }
 
 .modal-header h2 {
+    width: 70%;
     margin: 0;
     font-size: 1.4rem;
     color: #333;
 }
 
 .close-btn {
+    width: 25%;
     background: none;
     border: none;
     font-size: 2rem;
