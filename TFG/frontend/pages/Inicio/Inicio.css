@@ -181,10 +181,11 @@
    ========================================= */
 .distribuccionFAQ-home {
     width: 100%;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
     padding-bottom: 80px;
 }
 

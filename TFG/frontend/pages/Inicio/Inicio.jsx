@@ -96,28 +96,28 @@ function Inicio() {
 
                 <div className='distribuccionFAQ-home'>
                     <FAQItem
-                        question="¿Cómo puedo crear una cuenta?"
-                        answer="Puedes registrarte desde la app introduciendo tus datos personales básicos. Una vez completado el registro, podrás acceder a tu cuenta y empezar a gestionar tus finanzas."
+                        pregunta="¿Cómo puedo crear una cuenta?"
+                        respuesta="Puedes registrarte desde la app introduciendo tus datos personales básicos. Una vez completado el registro, podrás acceder a tu cuenta y empezar a gestionar tus finanzas."
                     />
 
                     <FAQItem
-                        question="¿Cómo puedo realizar una transferencia?"
-                        answer="Para hacer una transferencia, accede a la sección de pagos, introduce el número de cuenta del destinatario, el importe y confirma la operación."
+                        pregunta="¿Cómo puedo realizar una transferencia?"
+                        respuesta="Para hacer una transferencia, accede a la sección de pagos, introduce el número de cuenta del destinatario, el importe y confirma la operación."
                     />
 
                     <FAQItem
-                        question="¿Es segura mi información bancaria?"
-                        answer="Sí, utilizamos medidas de seguridad como encriptación de datos y autenticación de usuarios para proteger tu información personal y financiera."
+                        pregunta="¿Es segura mi información bancaria?"
+                        respuesta="Sí, utilizamos medidas de seguridad como encriptación de datos y autenticación de usuarios para proteger tu información personal y financiera."
                     />
 
                     <FAQItem
-                        question="¿Cómo puedo consultar mi saldo y movimientos?"
-                        answer="Puedes ver tu saldo actualizado y el historial de movimientos desde el panel principal de tu cuenta en cualquier momento."
+                        pregunta="¿Cómo puedo consultar mi saldo y movimientos?"
+                        respuesta="Puedes ver tu saldo actualizado y el historial de movimientos desde el panel principal de tu cuenta en cualquier momento."
                     />
 
                     <FAQItem
-                        question="¿Qué hago si detecto una operación sospechosa?"
-                        answer="Si ves una transacción que no reconoces, contacta inmediatamente con soporte desde la app para que podamos revisar y asegurar tu cuenta."
+                        pregunta="¿Qué hago si detecto una operación sospechosa?"
+                        respuesta="Si ves una transacción que no reconoces, contacta inmediatamente con soporte desde la app para que podamos revisar y asegurar tu cuenta."
                     />
                 </div>
             </div>
