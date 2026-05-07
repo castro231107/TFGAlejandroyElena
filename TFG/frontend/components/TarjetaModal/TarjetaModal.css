@@ -1,0 +1,139 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    /* hace que el modal aparezca encima de todo*/
+    backdrop-filter: blur(8px);
+    /*Desenfoca todo lo que esta detrás*/
+}
+
+.modal-tarjeta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+
+    /* keyframes nos permite hacer animaciones*/
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.credit-card {
+    width: 400px;
+    height: 250px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+    /*linear-gradient hace que el color cambie gradualmente de un tono a otro*/
+    /* deg es el angulo en el que cambia el color*/
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+.credit-card::before {
+    /*creo un circulo de color blanco un poco transparente*/
+    /* ::before es un pseudo-elemento que crea un elemento antes del contenido del elemento*/
+    /* es como crear una imagen dentro de la tarjeta*/
+    /* content: ''; es necesario para que el pseudo-elemento se muestre*/
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+}
+
+.card-chip {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+    border-radius: 8px;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.card-number {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.label {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Inter', sans-serif;
+}
+
+.value {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.close-tarjeta-btn {
+    padding: 0.8rem 2rem;
+    background-color: white;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-tarjeta-btn:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 450px) {
+    .credit-card {
+        width: 320px;
+        height: 200px;
+        padding: 1.5rem;
+    }
+
+    .card-number {
+        font-size: 1.2rem;
+    }
+}
