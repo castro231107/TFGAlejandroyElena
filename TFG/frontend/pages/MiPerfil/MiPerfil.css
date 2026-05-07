@@ -82,11 +82,12 @@
     gap: 1.5rem;
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .perfil-btn {
-    padding: 0.8rem 1.5rem;
+    width: 50%;
+    padding: 0.8rem 1rem;
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
@@ -160,11 +161,14 @@
     }
 
     .perfil-acciones {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
+        justify-content: center;
     }
 
     .perfil-btn {
-        width: 100%;
+        width: auto;
+        flex: 1;
+        max-width: 200px;
     }
 }
