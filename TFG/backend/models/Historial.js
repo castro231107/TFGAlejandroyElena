@@ -1,28 +1,22 @@
 const mongoose = require("mongoose");
 
-const transferSchema = new mongoose.Schema({
+const historialSchema = new mongoose.Schema({
 
-  // ID del usuario que envía
-  emisorId: {
+  // ID del usuario
+  userId: {
     type: Number,
     required: true
   },
 
-  // Nombre del receptor
-  nombreReceptor: {
-    type: String,
-    required: true
-  },
-
-  // Cantidad transferida
-  cantidad: {
-    type: Number,
-    required: true
-  },
-
-  // Concepto de la transferencia
+  // Concepto del movimiento
   concepto: {
     type: String,
+    required: true
+  },
+
+  // Cantidad del movimiento
+  cantidad: {
+    type: Number,
     required: true
   },
 
@@ -47,4 +41,4 @@ const transferSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model("Transfer", transferSchema);
+module.exports = mongoose.model("Historial", historialSchema);

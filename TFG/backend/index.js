@@ -4,10 +4,51 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 
 const User = require("./models/User");
+const Tarjeta = require("./models/Tarjeta");
 
 const app = express();
 
 require("dotenv").config();
+
+// ========================
+// GENERAR TARJETA
+// ========================
+
+// Número tarjeta
+function generarNumeroTarjeta() {
+
+  let numero = "";
+
+  for (let i = 0; i < 4; i++) {
+
+    numero += Math.floor(1000 + Math.random() * 9000);
+
+    if (i < 3) {
+      numero += " ";
+    }
+  }
+
+  return numero;
+}
+
+// CVV
+function generarCVV() {
+  return Math.floor(100 + Math.random() * 900).toString();
+}
+
+// Fecha caducidad
+function generarFechaCaducidad() {
+
+  const mes = String(
+    Math.floor(Math.random() * 12) + 1
+  ).padStart(2, "0");
+
+  const año = String(
+    new Date().getFullYear() + 4
+  ).slice(-2);
+
+  return `${mes}/${año}`;
+}
 
 // ========================
 // MIDDLEWARES
@@ -39,11 +80,28 @@ app.post("/api/usuarios", async (req, res) => {
   try {
 
     // 🔐 ENCRIPTAR CONTRASEÑA
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const hashedPassword = await bcrypt.hash(
+      req.body.password,
+      10
+    );
 
+    // 👤 CREAR USUARIO
     const user = await User.create({
       ...req.body,
       password: hashedPassword
+    });
+
+    // 💳 CREAR TARJETA AUTOMÁTICA
+    await Tarjeta.create({
+
+      userId: user.id,
+
+      numeroTarjeta: generarNumeroTarjeta(),
+
+      cvv: generarCVV(),
+
+      fechaCaducidad: generarFechaCaducidad()
+
     });
 
     console.log("USUARIO CREADO:", user);
@@ -55,7 +113,9 @@ app.post("/api/usuarios", async (req, res) => {
     console.log("ERROR REGISTRO:");
     console.log(err);
 
-    res.status(500).json({ message: "Error al crear usuario" });
+    res.status(500).json({
+      message: "Error al crear usuario"
+    });
   }
 });
 
@@ -70,21 +130,30 @@ app.post("/api/login", async (req, res) => {
 
     console.log("LOGIN INTENTO:", correo);
 
-    // 🔍 buscar usuario
+    // 🔍 BUSCAR USUARIO
     const user = await User.findOne({ correo });
 
+    // ❌ USUARIO NO EXISTE
     if (!user) {
-      return res.status(400).json({ message: "Usuario no encontrado" });
+      return res.status(400).json({
+        message: "Usuario no encontrado"
+      });
     }
 
-    // 🔐 comparar contraseña
-    const isMatch = await bcrypt.compare(password, user.password);
+    // 🔐 COMPARAR CONTRASEÑA
+    const isMatch = await bcrypt.compare(
+      password,
+      user.password
+    );
 
+    // ❌ CONTRASEÑA INCORRECTA
     if (!isMatch) {
-      return res.status(400).json({ message: "Contraseña incorrecta" });
+      return res.status(400).json({
+        message: "Contraseña incorrecta"
+      });
     }
 
-    // ✅ login correcto
+    // ✅ LOGIN CORRECTO
     res.json({
       message: "Login correcto",
       user
@@ -95,7 +164,9 @@ app.post("/api/login", async (req, res) => {
     console.log("ERROR LOGIN:");
     console.log(err);
 
-    res.status(500).json({ message: "Error en el servidor" });
+    res.status(500).json({
+      message: "Error en el servidor"
+    });
   }
 });
 
