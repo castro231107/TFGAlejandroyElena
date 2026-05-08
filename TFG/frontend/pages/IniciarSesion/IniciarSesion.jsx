@@ -38,7 +38,7 @@ const IniciarSesion = () => {
     }
 
     console.log("Usuario logueado:", data);
-    navigate("/");
+    navigate("/micuenta");
   };
 
   return (

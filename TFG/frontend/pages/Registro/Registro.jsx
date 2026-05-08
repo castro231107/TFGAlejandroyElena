@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Registro.css";
 
 const Registro = () => {
+  const navigate = useNavigate();
 
   // 👇 AQUÍ VA EL ESTADO DEL FORMULARIO
   const [form, setForm] = useState({
@@ -33,6 +34,10 @@ const Registro = () => {
 
     const data = await res.json();
     console.log(data);
+
+    if (res.ok) {
+      navigate("/micuenta");
+    }
   };
 
   return (
