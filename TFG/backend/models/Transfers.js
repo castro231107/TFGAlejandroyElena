@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
 
-const transferSchema = new mongoose.Schema({
+const transfersSchema = new mongoose.Schema({
 
   // ID del usuario que envía
   emisorId: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true
   },
 
   // ID del receptor
   receptorId: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true
   },
 
@@ -49,4 +51,4 @@ const transferSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model("Transfer", transferSchema);
+module.exports = mongoose.model("Transfers", transfersSchema);

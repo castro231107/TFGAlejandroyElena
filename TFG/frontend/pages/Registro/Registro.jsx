@@ -36,7 +36,8 @@ const Registro = () => {
     console.log(data);
 
     if (res.ok) {
-      navigate("/micuenta");
+      localStorage.setItem("usuario", JSON.stringify(data));
+      navigate(`/micuenta/${data.id}`);
     }
   };
 

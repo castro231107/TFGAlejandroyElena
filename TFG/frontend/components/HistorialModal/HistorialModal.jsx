@@ -14,7 +14,6 @@ function HistorialModal({ isOpen, onClose }) {
                     <h2>Historial de Movimientos</h2>
                     {/* Al hacer clic en este botón, se ejecuta la función onClose para cerrar la ventana */}
                     <button className="close-btn" onClick={onClose}>&times;</button>
-                    {/*&times es el símbolo de la x para cerrar*/}
                 </div>
 
                 <div className="modal-body">
@@ -22,11 +21,14 @@ function HistorialModal({ isOpen, onClose }) {
                         <input type="date" className="filtro-input" placeholder="Fecha" />
                         <select className="filtro-input">
                             <option value="">Categoría</option>
-                            <option value="comida">Comida</option>
-                            <option value="transporte">Transporte</option>
-                            <option value="ocio">Ocio</option>
+                            <option value="Alimentación">Alimentación</option>
+                            <option value="Ocio">Ocio</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Vivienda">Vivienda</option>
+                            <option value="Suscripciones">Suscripciones</option>
+                            <option value="Otros gastos">Otros gastos</option>
                         </select>
-                        <input type="text" className="filtro-input" placeholder="Persona" />
+                        <input type="text" className="filtro-input" placeholder="Concepto" />
                         <button className="btn-buscar">Buscar</button>
                     </div>
 

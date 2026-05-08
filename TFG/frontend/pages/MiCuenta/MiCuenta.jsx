@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './MiCuenta.css';
 import HistorialModal from '../../components/HistorialModal/HistorialModal';
 import TransferenciaModal from '../../components/TransferenciaModal/TransferenciaModal';
@@ -6,16 +7,27 @@ import CategoriasModal from '../../components/CategoriasModal/CategoriasModal';
 import TarjetaModal from '../../components/TarjetaModal/TarjetaModal';
 
 function MiCuenta() {
+    const { id } = useParams();
+    const [user, setUser] = useState(null);
     const [isHistorialOpen, setIsHistorialOpen] = useState(false);
     const [isTransferenciaOpen, setIsTransferenciaOpen] = useState(false);
     const [isCategoriasOpen, setIsCategoriasOpen] = useState(false);
     const [isTarjetaOpen, setIsTarjetaOpen] = useState(false);
 
+    useEffect(() => {
+        fetch(`http://localhost:3000/api/usuarios/${id}`)
+            .then(res => res.json())
+            .then(data => setUser(data))
+            .catch(err => console.error("Error al cargar usuario:", err));
+    }, [id]);
+
     return (
         <div className="mi-cuenta-container">
             <div className="saldo-card">
                 <h2>Dinero Total</h2>
-                <h1 className="saldo-cantidad">745,00 €</h1>
+                <h1 className="saldo-cantidad">
+                    {user ? `${user.dinero.toLocaleString('es-ES', { minimumFractionDigits: 2 })} €` : "Cargando..."}
+                </h1>
             </div>
 
             <div className="botones-container">

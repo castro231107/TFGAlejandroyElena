@@ -80,10 +80,12 @@
     font-size: 1.25rem;
 }
 
-.categoria-icono.comida { background-color: #ffeaa7; }
+.categoria-icono.alimentacion { background-color: #ffeaa7; }
 .categoria-icono.transporte { background-color: #81ecec; }
 .categoria-icono.ocio { background-color: #fab1a0; }
-.categoria-icono.hogar { background-color: #a29bfe; }
+.categoria-icono.vivienda { background-color: #a29bfe; }
+.categoria-icono.suscripciones { background-color: #fdcb6e; }
+.categoria-icono.otros { background-color: #dfe6e9; }
 
 .categoria-gasto {
     font-weight: 700;

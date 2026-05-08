@@ -171,6 +171,29 @@ app.post("/api/login", async (req, res) => {
 });
 
 // ========================
+// OBTENER USUARIO POR ID
+// ========================
+app.get("/api/usuarios/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    let user;
+
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      user = await User.findById(id);
+    } else {
+      user = await User.findOne({ id: parseInt(id) });
+    }
+
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: "Error al obtener el usuario" });
+  }
+});
+
+// ========================
 // SERVIDOR
 // ========================
 app.listen(3000, () => {
