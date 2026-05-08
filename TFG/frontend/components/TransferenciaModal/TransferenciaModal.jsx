@@ -32,10 +32,12 @@ function TransferenciaModal({ isOpen, onClose }) {
                             <label>Categoría</label>
                             <select className="form-input">
                                 <option value="">Selecciona una categoría</option>
-                                <option value="amigos">Amigos</option>
-                                <option value="familia">Familia</option>
-                                <option value="pagos">Pagos/Servicios</option>
-                                <option value="regalos">Regalos</option>
+                                <option value="Alimentación">Alimentación</option>
+                                <option value="Ocio">Ocio</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Vivienda">Vivienda</option>
+                                <option value="Suscripciones">Suscripciones</option>
+                                <option value="Otros gastos">Otros gastos</option>
                             </select>
                         </div>
                         

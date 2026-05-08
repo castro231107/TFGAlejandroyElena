@@ -24,10 +24,10 @@ function AppContent() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="/micuenta" element={<MiCuenta />} />
-          <Route path="/tarjeta" element={<Tarjeta />} />
-          <Route path="/noticias" element={<Noticias />} />
-          <Route path="/miperfil" element={<MiPerfil />} />
+          <Route path="/micuenta/:id" element={<MiCuenta />} />
+          <Route path="/tarjeta/:id" element={<Tarjeta />} />
+          <Route path="/noticias/:id" element={<Noticias />} />
+          <Route path="/miperfil/:id" element={<MiPerfil />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/iniciar-sesion" element={<IniciarSesion />} />
         </Routes>

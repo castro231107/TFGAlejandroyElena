@@ -29,10 +29,18 @@ function CategoriasModal({ isOpen, onClose }) {
                         <div className="lista-categorias">
                             <div className="categoria-item">
                                 <div className="categoria-info">
-                                    <div className="categoria-icono comida">🍔</div>
-                                    <span>Comida y Restaurantes</span>
+                                    <div className="categoria-icono alimentacion">🍎</div>
+                                    <span>Alimentación</span>
                                 </div>
                                 <span className="categoria-gasto">350,00 €</span>
+                            </div>
+
+                            <div className="categoria-item">
+                                <div className="categoria-info">
+                                    <div className="categoria-icono ocio">🎬</div>
+                                    <span>Ocio</span>
+                                </div>
+                                <span className="categoria-gasto">150,00 €</span>
                             </div>
 
                             <div className="categoria-item">
@@ -45,18 +53,26 @@ function CategoriasModal({ isOpen, onClose }) {
 
                             <div className="categoria-item">
                                 <div className="categoria-info">
-                                    <div className="categoria-icono ocio">🎬</div>
-                                    <span>Ocio y Entretenimiento</span>
+                                    <div className="categoria-icono vivienda">🏠</div>
+                                    <span>Vivienda</span>
                                 </div>
-                                <span className="categoria-gasto">150,00 €</span>
+                                <span className="categoria-gasto">800,00 €</span>
                             </div>
 
                             <div className="categoria-item">
                                 <div className="categoria-info">
-                                    <div className="categoria-icono hogar">🏠</div>
-                                    <span>Hogar y Facturas</span>
+                                    <div className="categoria-icono suscripciones">🔔</div>
+                                    <span>Suscripciones</span>
                                 </div>
-                                <span className="categoria-gasto">400,00 €</span>
+                                <span className="categoria-gasto">45,00 €</span>
+                            </div>
+
+                            <div className="categoria-item">
+                                <div className="categoria-info">
+                                    <div className="categoria-icono otros">📦</div>
+                                    <span>Otros gastos</span>
+                                </div>
+                                <span className="categoria-gasto">60,00 €</span>
                             </div>
                         </div>
                     </div>

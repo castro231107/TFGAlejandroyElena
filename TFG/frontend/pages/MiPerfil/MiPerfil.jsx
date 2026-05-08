@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './MiPerfil.css';
 import NotificacionesModal from '../../components/NotificacionesModal/NotificacionesModal';
 // Importamos los componentes necesarios de la librería Recharts para la gráfica
@@ -12,24 +13,34 @@ import {
 } from 'recharts';
 
 function MiPerfil() {
+    const { id } = useParams();
+    const [user, setUser] = useState(null);
     // Estado para controlar si el modal de notificaciones está abierto o cerrado
     const [isNotificacionesOpen, setIsNotificacionesOpen] = useState(false);
 
+    useEffect(() => {
+        fetch(`http://localhost:3000/api/usuarios/${id}`)
+            .then(res => res.json())
+            .then(data => setUser(data))
+            .catch(err => console.error("Error al cargar usuario:", err));
+    }, [id]);
+
     // Datos simulados del usuario (nombre, apellido, contacto)
-    const userData = {
-        nombre: 'Alejandro',
-        apellido: 'Castro',
-        telefono: '+34 600 000 000',
-        email: 'alejandro@ejemplo.com'
-    };
+    const userData = user ? {
+        nombre: user.nombre,
+        apellido: user.apellidos,
+        telefono: user.telefono,
+        email: user.correo
+    } : null;
 
     // Datos para la gráfica circular: cada objeto es una porción del gráfico
     const gastosData = [
-        { name: 'Ocio', value: 300, color: '#FF8042' },
-        { name: 'Comida', value: 450, color: '#0088FE' },
+        { name: 'Alimentación', value: 350, color: '#FF8042' },
+        { name: 'Ocio', value: 150, color: '#0088FE' },
         { name: 'Transporte', value: 120, color: '#00C49F' },
-        { name: 'Suscripciones', value: 80, color: '#FFBB28' },
         { name: 'Vivienda', value: 800, color: '#8884d8' },
+        { name: 'Suscripciones', value: 45, color: '#FFBB28' },
+        { name: 'Otros gastos', value: 60, color: '#A2A2A2' },
     ];
 
     // Función para simular la eliminación de la cuenta con una confirmación nativa del navegador
@@ -38,6 +49,10 @@ function MiPerfil() {
             alert('Cuenta eliminada (simulación)');
         }
     };
+
+    if (!userData) {
+        return <div className="perfil-container">Cargando datos del perfil...</div>;
+    }
 
     return (
         <div className="perfil-container">
@@ -91,11 +106,6 @@ function MiPerfil() {
                                 cx="50%" // Centro X al 50%
                                 cy="50%" // Centro Y al 50%
                                 labelLine={true} // Línea que une el quesito con el texto
-
-                                // Función para mostrar el nombre y el porcentaje en las etiquetas externas
-                                // percent lo calcula Recharts automaticamente, hace la suma de todo lo que hay en value y divide 
-                                // cada uno entre la suma total, luego lo multiplica por 100 para que salga en porcentaje.
-                                // y toFixed(0) redondea el porcentaje a un número entero.
                                 label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                                 outerRadius={120} // Tamaño del círculo
                                 fill="#8884d8"

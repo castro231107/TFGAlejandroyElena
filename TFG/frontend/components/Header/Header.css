@@ -28,14 +28,16 @@
 .navegacion-cabecera {
     display: flex;
     justify-content: center;
-    gap: 3.5rem; /* Aumentamos la separación entre los enlaces */
+    gap: 3.5rem;
+    /* Aumentamos la separación entre los enlaces */
 }
 
 .navegacion-cabecera a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.05rem; /* Un poco más grande para mejor lectura */
+    font-size: 1.05rem;
+    /* Un poco más grande para mejor lectura */
     transition: all 0.2s;
 }
 
