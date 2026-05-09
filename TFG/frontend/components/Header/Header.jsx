@@ -5,7 +5,7 @@ import './Header.css';
 function Header() {
     const usuarioString = localStorage.getItem("usuario");
     const usuario = usuarioString ? JSON.parse(usuarioString) : null;
-    const userId = usuario ? usuario.id : "";
+    const userId = usuario ? usuario._id : "";
 
     return (
         <header className="cabecera-app">
