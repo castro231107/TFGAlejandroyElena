@@ -4,13 +4,15 @@ const transferSchema = new mongoose.Schema({
 
   // ID del usuario que envía
   emisorId: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
     required: true
   },
 
   // ID del receptor
   receptorId: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
     required: true
   },
 

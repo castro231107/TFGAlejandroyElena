@@ -6,6 +6,7 @@ const Registro = () => {
   const navigate = useNavigate();
 
   // 👇 AQUÍ VA EL ESTADO DEL FORMULARIO
+  // esto lo recibirá userController.js con el ...req.body
   const [form, setForm] = useState({
     nombre: "",
     apellidos: "",
@@ -14,12 +15,18 @@ const Registro = () => {
     password: ""
   });
 
+  //coge los datos vacios del useState anterior
+  //luego cuando escribas algo en la web, se actualiza con e.target.name y e.target.value
+  //y lo guarda en form
+  //e.target.name es el nombre del input (nombre, apellidos, correo, telefono, password)
+  //e.target.value es el valor que le asignamos a input
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value
     });
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +44,7 @@ const Registro = () => {
 
     if (res.ok) {
       localStorage.setItem("usuario", JSON.stringify(data));
-      navigate(`/micuenta/${data.id}`);
+      navigate(`/micuenta/${data._id}`);
     }
   };
 

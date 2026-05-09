@@ -39,7 +39,7 @@ const IniciarSesion = () => {
 
     console.log("Usuario logueado:", data);
     localStorage.setItem("usuario", JSON.stringify(data.user));
-    navigate(`/micuenta/${data.user.id}`);
+    navigate(`/micuenta/${data.user._id}`);
   };
 
   return (
