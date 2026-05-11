@@ -6,6 +6,11 @@ require("dotenv").config();
 
 const { registroUsuario, obtenerUsuario } = require("./controllers/UserController");
 const { loginUsuario } = require("./controllers/AuthController");
+const { obtenerTarjetaPorUsuario } = require("./controllers/TarjetaController");  
+const {
+  crearMovimiento,
+  obtenerMovimientosUsuario
+} = require("./controllers/MovimientoController");
 
 const app = express();
 
@@ -42,6 +47,12 @@ app.post("/api/login", loginUsuario);
 
 app.get("/api/usuarios/:id", obtenerUsuario);
 // OBTENER USUARIO
+
+app.get("/api/tarjetas/:userId", obtenerTarjetaPorUsuario);
+// OBTENER TARJETA
+
+app.post("/api/movimientos", crearMovimiento);
+app.get("/api/movimientos/:userId", obtenerMovimientosUsuario);
 
 // ========================
 // SERVIDOR
