@@ -103,7 +103,14 @@ exports.obtenerUsuario = async (req, res) => {
       return res.status(404).json({ message: "Usuario no encontrado" });
     }
 
-    res.json(user);
+    // Buscamos la tarjeta asociada a este usuario
+    const tarjeta = await Tarjeta.findOne({ userId: user._id });
+
+    // Devolvemos el usuario con su tarjeta
+    res.json({
+      ...user._doc,
+      tarjeta: tarjeta || null
+    });
 
   } catch (err) {
     res.status(500).json({ message: "Error al obtener el usuario" });

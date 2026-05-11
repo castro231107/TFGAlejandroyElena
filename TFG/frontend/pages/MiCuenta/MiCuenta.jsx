@@ -13,6 +13,7 @@ function MiCuenta() {
     const [isTransferenciaOpen, setIsTransferenciaOpen] = useState(false);
     const [isCategoriasOpen, setIsCategoriasOpen] = useState(false);
     const [isTarjetaOpen, setIsTarjetaOpen] = useState(false);
+    const [tarjeta, setTarjeta] = useState(null);
 
     useEffect(() => {
         fetch(`http://localhost:3000/api/usuarios/${id}`)
@@ -20,6 +21,23 @@ function MiCuenta() {
             .then(data => setUser(data))
             .catch(err => console.error("Error al cargar usuario:", err));
     }, [id]);
+    //[id] significa que se ejecutara cada vez que el id cambie
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/api/tarjetas/${id}`)
+            .then(res => res.json())
+            .then(data => setTarjeta(data))
+            .catch(err => console.error("Error al cargar tarjeta:", err));
+    }, [id]);
+
+    // Cargar movimientos
+    useEffect(() => {
+        fetch(`http://localhost:3000/api/movimientos/${id}`)
+            .then(res => res.json())
+            .then(data => setMovimientos(data))
+            .catch(err => console.error("Error al cargar movimientos:", err));
+    }, [id]);
+
 
     return (
         <div className="mi-cuenta-container">
@@ -48,7 +66,11 @@ function MiCuenta() {
             <HistorialModal isOpen={isHistorialOpen} onClose={() => setIsHistorialOpen(false)} />
             <TransferenciaModal isOpen={isTransferenciaOpen} onClose={() => setIsTransferenciaOpen(false)} />
             <CategoriasModal isOpen={isCategoriasOpen} onClose={() => setIsCategoriasOpen(false)} />
-            <TarjetaModal isOpen={isTarjetaOpen} onClose={() => setIsTarjetaOpen(false)} />
+            <TarjetaModal
+                isOpen={isTarjetaOpen}
+                onClose={() => setIsTarjetaOpen(false)}
+                tarjeta={tarjeta}
+            />
         </div>
     );
 }
